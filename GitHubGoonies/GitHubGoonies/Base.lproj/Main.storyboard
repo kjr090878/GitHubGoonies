@@ -25,7 +25,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kpi-eZ-mvy">
                                             <rect key="frame" x="105" y="13" width="477" height="73.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="50a-sg-qEJ">
@@ -57,16 +57,58 @@
                             <outlet property="delegate" destination="g0F-Ed-jGC" id="VW8-1a-TNS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Goonies" id="6MQ-id-8J7"/>
+                    <navigationItem key="navigationItem" title="Goonies" id="6MQ-id-8J7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QHy-72-pEV">
+                            <connections>
+                                <segue destination="EqQ-K1-qks" kind="presentation" id="5V4-iq-6vs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Thx-1p-ta2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="147" y="361"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Goonie View Controller-->
+        <scene sceneID="9Dd-fB-B0Y">
+            <objects>
+                <viewController id="dc7-ty-GFx" customClass="CreateGoonieViewController" customModule="GitHubGoonies" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aer-0v-pRG"/>
+                        <viewControllerLayoutGuide type="bottom" id="J0m-fy-9b0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eAo-QJ-QVe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i6A-TU-DRT">
+                                <rect key="frame" x="20" y="80" width="302" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2e-DH-q0E">
+                                <rect key="frame" x="20" y="123" width="302" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yB0-1k-o6z">
+                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="Kdf-WQ-PBw">
+                            <connections>
+                                <action selector="cancelCreate:" destination="dc7-ty-GFx" id="o20-RD-qAr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gOt-V4-7TW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="959" y="1035"/>
+        </scene>
+        <!--Goonie Detail View Controller-->
         <scene sceneID="zOm-Gt-rUc">
             <objects>
-                <viewController id="AbB-Ni-nIB" sceneMemberID="viewController">
+                <viewController id="AbB-Ni-nIB" customClass="GoonieDetailViewController" customModule="GitHubGoonies" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="J8v-er-I79"/>
                         <viewControllerLayoutGuide type="bottom" id="1f0-GP-LVs"/>
@@ -74,8 +116,49 @@
                     <view key="view" contentMode="scaleToFill" id="2o7-eG-V5d">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1e0-A3-rt2">
+                                <rect key="frame" x="15" y="89" width="77" height="73.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1e0-A3-rt2" secondAttribute="height" multiplier="28:27" constant="1" id="FB1-JH-swv"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLi-tM-X5d">
+                                <rect key="frame" x="100" y="122" width="477" height="32.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Repo Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqw-v2-9Yj">
+                                <rect key="frame" x="15" y="294" width="477" height="40.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMy-fZ-0PX">
+                                <rect key="frame" x="15" y="235" width="477" height="40.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQr-F2-YV4">
+                                <rect key="frame" x="15" y="182" width="477" height="40.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvM-Yc-DKs">
+                                <rect key="frame" x="100" y="89" width="477" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="fullNameLabel" destination="CvM-Yc-DKs" id="uRq-cY-9yx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SeD-qk-Aml" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -96,6 +179,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5p-xl-2X2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-567" y="403"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gyt-w5-0Vy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EqQ-K1-qks" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VJH-jJ-8qg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dc7-ty-GFx" kind="relationship" relationship="rootViewController" id="3dw-32-uSi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KXi-jN-heX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="147" y="1035"/>
         </scene>
     </scenes>
 </document>

@@ -20,6 +20,14 @@ class GooniesTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -110,14 +118,37 @@ class GooniesTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+     //In a storyboard-based application, you will often want to do a little preparation before navigation
+    // this function is called before a segue happens
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        
+        
+        if let detailVC = segue.destinationViewController as? GoonieDetailViewController {
+        
+        if let cell = sender as? UITableViewCell {
+            
+            if let indexPath =
+                tableView.indexPathForCell (cell) {
+                    
+                    
+                    detailVC.userIndex = indexPath.row
+            }
+            
+            }
+        
+        
+        }
+        
+        
+        
     }
-    */
+    
 
 }
