@@ -20,7 +20,7 @@ class CreateGoonieViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        GitHubRequest.requestUserInfo("kjr090878", completion: { (responseInfo) -> () in
+        GitHubRequest.requestUserInfo("joalbright", completion: { (responseInfo) -> () in
             
             if let user = responseInfo as? [String:AnyObject] {
                 

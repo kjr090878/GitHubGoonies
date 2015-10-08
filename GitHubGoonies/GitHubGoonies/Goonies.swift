@@ -8,30 +8,25 @@
 
 import Foundation
 
-// Normal
+///// Normal
 
 // new class file -> GoonieDetailViewController
 // layout the detail view controller to display all of the simple & full detail info
 // add a plus button to the top right of the navigationbar on the Goonies view
 
-
-// Hard
+///// Hard
 
 // add a new view controller to storyboard below the Goonies viewcontroller
 // connect the plus button with a present segue
 // add a textfield, submit button to presented viewcontroller
 // add a cancel button that dismisses the presented viewcontroller
 
-
-
-
-// simple detail
+///// simple detail
 
 // username
 // avatar
 
-
-// full detail
+///// full detail
 
 // full name
 // location
@@ -89,6 +84,7 @@ class GitHubRequest: NSObject {
     class func requestUserInfo(username: String, completion: (responseInfo: AnyObject?) -> ()) {
         
         let userURL = API_ROOT + "/users/" + username
+        
         print(userURL)
         
         if let url = NSURL(string: userURL) {
