@@ -14,7 +14,11 @@ class GoonieDetailViewController: UIViewController {
     
     
     @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
 
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var userEmailLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         

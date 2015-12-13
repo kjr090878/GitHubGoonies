@@ -1,14 +1,17 @@
 //
-//  GooniesTableViewController.swift
+//  ACDetailViewController.swift
 //  GitHubGoonies
 //
-//  Created by Kelly Robinson on 9/28/15.
+//  Created by Kelly Robinson on 12/12/15.
 //  Copyright © 2015 Kelly Robinson. All rights reserved.
 //
 
 import UIKit
 
-class GooniesTableViewController: UITableViewController {
+class ACDetailViewController: UITableViewController {
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,65 +23,32 @@ class GooniesTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        tableView.reloadData()
-    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-    
-    
- 
 
     // MARK: - Table view data source
 
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 0
+    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return users.count
+        return 0
     }
 
-    
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("GoonieCell", forIndexPath: indexPath) as! GoonieTableViewCell
-        
-        let user = users[indexPath.row]
-        
-        if let username = user["login"] as? String {
-            
-            cell.userNameLabel.text = username
-            
-            
-        }
-        
-        if let avatarURL = user["avatar_url"] as? String {
-            
-             cell.avatarImageView.hidden = false
-            
-            if let url = NSURL(string: avatarURL) {
-            
-                if let data = NSData(contentsOfURL: url) {
-                    
-                    if let image = UIImage(data: data) {
-                        
-                        cell.avatarImageView.image = image
-                    
-                    }
-                }
-                
-            }
-            
-        } else {
-            
-            cell.avatarImageView.hidden = true
-            
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
         // Configure the cell...
 
         return cell
     }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -115,37 +85,14 @@ class GooniesTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
-     //In a storyboard-based application, you will often want to do a little preparation before navigation
-    // this function is called before a segue happens
-    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
-        
-        
-        if let detailVC = segue.destinationViewController as? GoonieDetailViewController {
-        
-        if let cell = sender as? UITableViewCell {
-            
-            if let indexPath =
-                tableView.indexPathForCell (cell) {
-                    
-                    
-                    detailVC.userIndex = indexPath.row
-            }
-            
-            }
-        
-        
-        }
-        
-        
-        
     }
-    
+    */
 
 }

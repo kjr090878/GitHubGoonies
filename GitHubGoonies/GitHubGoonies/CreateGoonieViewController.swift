@@ -10,12 +10,28 @@ import UIKit
 
 class CreateGoonieViewController: UIViewController {
     
+    @IBOutlet weak var addUserButtom: UIBarButtonItem!
     
     @IBAction func cancelCreate(sender: AnyObject) {
         
         navigationController?.dismissViewControllerAnimated(true, completion: nil)
         
     }
+    
+    
+    @IBAction func addAvatarButton(sender: AnyObject) {
+    }
+    
+    @IBOutlet weak var addAvatar: PrettyButton!
+    
+
+    @IBOutlet weak var fullNameText: UITextField!
+    
+    @IBOutlet weak var emailUserText: UITextField!
+    
+    @IBOutlet weak var usernameText: UITextField!
+        
+    @IBOutlet weak var locationText: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +51,6 @@ class CreateGoonieViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
 
     /*
